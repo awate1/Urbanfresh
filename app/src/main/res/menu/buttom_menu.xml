@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/shop"
+        android:checkable="false"
+        android:enabled="true"
+        android:icon="@drawable/ic_shop"
+        android:title="Shop"
+        android:visible="true" />
+    <item
+        android:id="@+id/explore"
+        android:checkable="false"
+        android:icon="@drawable/ic_explore"
+        android:title="Explore"
+        android:visible="true" />
+    <item
+        android:id="@+id/cart"
+        android:checkable="false"
+        android:icon="@drawable/ic_cart"
+        android:title="Cart"
+        android:visible="true" />
+    <item
+        android:id="@+id/fav"
+        android:enabled="true"
+        android:icon="@drawable/ic_fav"
+        android:title="Favourite"
+        android:visible="true" />
+    <item
+        android:id="@+id/account"
+        android:checkable="false"
+        android:enabled="true"
+        android:icon="@drawable/ic_account"
+        android:title="Account" />
+
+</menu>
