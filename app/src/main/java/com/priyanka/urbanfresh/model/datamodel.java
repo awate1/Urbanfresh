@@ -2,7 +2,6 @@ package com.priyanka.urbanfresh.model;
 
 public class datamodel {
     String image;
- //  String CategoryImage;
     String name;
 public  datamodel(){
 

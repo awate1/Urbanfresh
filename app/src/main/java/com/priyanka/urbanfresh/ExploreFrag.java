@@ -56,20 +56,13 @@ import static java.net.HttpURLConnection.HTTP_BAD_REQUEST;
 public class ExploreFrag extends Fragment {
 
 List<datamodel> mDatamodels;
-
-datamodel m;
-    RequestQueue rq;
 String Banner,AdObject;
-Context mContext;
     String request_url = "http://139.59.83.144:9050/api/home_test_section?category_id=2";
     private static final String TAG_image = "category_picture";
     private static final String TAG_name = "category_name";
-
     RecyclerView myItems;
-
  //   FragmentExploreBinding binding;
     ImageView mImageView,adimage;
-   JSONObject mJSONObject;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -83,10 +76,6 @@ Context mContext;
         new GetData().execute(request_url);
       //  binding = FragmentExploreBinding.inflate(inflater,container,false);
     //   Log.d("getActivity",Banner);
-
-
-
-
         return rootView;
 
     }
@@ -173,21 +162,14 @@ Context mContext;
                 if(jsonObj.getBoolean("success")){
                  //   Log.d("jsonStr", jsonStr);
                     JSONArray banner = jsonObj.getJSONArray("components").getJSONObject(0).getJSONArray("StaticBanner");
-
                     JSONObject mJSONObject = banner.getJSONObject(0);
                     Log.d("banner", mJSONObject.getString("banner_image"));
                     Banner=mJSONObject.getString("banner_image");
-                  //  mImageView=(ImageView) getActivity().findViewById(R.id.bannerimage);
-
-
                     JSONArray array = jsonObj.getJSONArray("components").getJSONObject(1).getJSONArray("categorydata");
                     JSONArray adarray = jsonObj.getJSONArray("components").getJSONObject(2).getJSONArray("AdsBanner");
                     JSONObject mObject = adarray.getJSONObject(0);
                     Log.d("adarray", mObject.getString("banner_image"));
                     AdObject=mObject.getString("banner_image");
-
-
-
           //     Log.d("caregoryarray", String.valueOf(adarray));
 
                     for (int i = 0; i < array.length(); i++) {
@@ -199,14 +181,7 @@ Context mContext;
                         mDatamodels.add(datamodel1);
 
                     }
-
-
                 }
-             //   Glide.with(mContext).load(Banner).into(mImageView);
-
-
-
-
             } catch (JSONException e) {
                 e.printStackTrace();
 
