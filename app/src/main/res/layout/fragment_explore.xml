@@ -3,16 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ExploreFrag">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <LinearLayout
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView">
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -21,9 +18,9 @@
             <ImageView
                 android:id="@+id/bannerimage"
                 android:layout_width="match_parent"
-                android:layout_height="135dp"
+                android:layout_height="150dp"
                 android:layout_margin="20dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/banner" />
 
             <LinearLayout
@@ -60,7 +57,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/explorefrag"
                 android:layout_width="wrap_content"
-                android:layout_height="350dp"
+                android:layout_height="300dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
 
@@ -90,6 +87,6 @@
             </LinearLayout>
 
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 
 </FrameLayout>
