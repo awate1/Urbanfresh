@@ -21,5 +21,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:labelVisibilityMode="labeled"
         app:layout_constraintStart_toStartOf="parent"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@drawable/tab_color"
+        app:itemTextColor="@drawable/tab_color"
         app:menu="@menu/buttom_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

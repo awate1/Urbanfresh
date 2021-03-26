@@ -17,11 +17,17 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.ic_logo1);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+getSupportActionBar().setDisplayShowTitleEnabled(false);
         setContentView(R.layout.activity_main);
         loadFragment(new ExploreFrag());
         bottomNavigation = findViewById(R.id.bottomNavigationView);
         bottomNavigation.setOnNavigationItemSelectedListener(this);
+        
         bottomNavigation.setSelectedItemId(R.id.explore);
+
 
     }
 
