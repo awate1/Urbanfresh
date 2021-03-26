@@ -37,11 +37,9 @@ public class ExploreAdapter extends RecyclerView.Adapter<ExploreAdapter.myviewho
 
     @Override
     public void onBindViewHolder(@NonNull myviewholder holder, int position) {
-     //   holder.imageCategory.setImageResource(dataholder.get(position).getImage());
         holder.nameCategory.setText(dataholder.get(position).getName());
-        Glide.with(mContext).load(dataholder.get(position).getImage()).into(holder.imageCategory);
-       // Glide.with(mContext).load(Banner).into(mImageView);
-       // Glide.with(mContext).load(Banner).into(mImageView);
+        Glide.with(mContext).load(dataholder.get(position).getImage()).placeholder(R.drawable.category).into(holder.imageCategory);
+
     }
 
     @Override

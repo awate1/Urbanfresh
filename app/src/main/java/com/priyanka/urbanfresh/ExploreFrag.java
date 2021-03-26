@@ -1,11 +1,13 @@
 package com.priyanka.urbanfresh;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -99,11 +101,12 @@ Context mContext;
         @Override
         protected void onPostExecute(String s) {
           //
-            Log.d("caregoryarray", String.valueOf(Banner));
             if (getActivity() == null) {
                 return;
             }
             Glide.with(getActivity()).load(Banner).into(mImageView);
+            Log.d("caregoryarray", String.valueOf(getActivity()));
+
             Glide.with(getActivity()).load(AdObject).into(adimage);
             ExploreAdapter exploreAdapter=new ExploreAdapter(getActivity(),mDatamodels);
             myItems.setLayoutManager(new GridLayoutManager(getActivity(), 3));
@@ -111,6 +114,15 @@ Context mContext;
 
         }
 
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        Activity a;
+        if (context instanceof Activity){
+            a=(Activity) context;
+        }
     }
 
     public String POST(String url){
